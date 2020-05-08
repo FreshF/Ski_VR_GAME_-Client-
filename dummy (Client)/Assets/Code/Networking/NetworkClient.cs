@@ -11,7 +11,8 @@ namespace Project.Networking
         // Start is called before the first frame update
         public override void Start() 
         {
-            base.Start();        
+            base.Start();
+            setupEvents();
         }
 
         // Update is called once per frame
@@ -19,5 +20,13 @@ namespace Project.Networking
         {
             base.Update();        
         }
+
+        private void setupEvents() 
+        {
+            On("open", (E) => 
+            {
+                Debug.Log("Connection made to the server");
+            }); 
+		}
     }
 }
